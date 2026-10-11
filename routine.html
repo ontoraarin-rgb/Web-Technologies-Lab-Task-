@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="eng">
+<head>
+    <title>My Class Routine</title>
+
+    <style>
+        #page-title {
+            text-align: center;
+            color: darkgreen;
+            font-size: 28px;
+        }
+
+        table {
+            border: 1px solid black;
+            border-collapse: collapse;
+            width: 80%;
+            margin: auto;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+        }
+
+        th {
+            background-color: lightgreen;
+        }
+
+        tr:hover {
+            background-color: khaki;
+        }
+
+        
+        .center {
+            text-align: center;
+        }
+
+        form {
+            width: 80%;
+            margin: auto;
+        }
+
+        input, select, textarea {
+            margin-bottom: 10px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="number"],
+        input[type="date"],
+        textarea {
+            border: 2px solid green;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+<h1 id="page-title">Weekly Class Routine</h1>
+
+<p class="center">
+<img src="logo.jpg" alt="course log" width="200" height="200">
+
+</p>
+<table>
+    <tr>
+            <th colspan="4">Class Schedule - Fall 2026</th>
+        </tr>
+
+        <tr>
+            <th>Day</th>
+            <th>Time</th>
+            <th>Course</th>
+            <th>Room</th>
+        </tr>
+
+        <tr>
+            <td rowspan="2">Sunday</td>
+            <td>08:30 AM</td>
+            <td>Web Technologies (Theory)</td>
+            <td>D-101</td>
+        </tr>
+
+        <tr>
+            <td>10:00 AM</td>
+            <td class="lab">Web Technologies (Lab)</td>
+            <td>LAB-3</td>
+        </tr>
+
+        <tr>
+            <td>Tuesday</td>
+            <td>09:00 AM</td>
+            <td>Database Systems</td>
+            <td>D-204</td>
+        </tr>
+
+        <tr>
+            <td>Thursday</td>
+            <td>11:30 AM</td>
+            <td>Software Engineering</td>
+            <td>D-110</td>
+        </tr>
+    </table>
+
+    <br>
+
+    <h2 class="center">Class Feedback Form</h2>
+
+    <form action="form-handler.html" method="post">
+        <fieldset>
+            <legend>Class Feedback</legend>
+
+            <label for="fullname">Full Name:</label><br>
+            <input
+                type="text"
+                id="fullname"
+                name="fullname"
+                minlength="3"
+                required>
+            <br>
+
+            <label for="email">Email:</label><br>
+            <input
+                type="email"
+                id="email"
+                name="email"
+                required>
+            <br>
+
+            <label for="classdate">Class Date:</label><br>
+            <input
+                type="date"
+                id="classdate"
+                name="classdate"
+                required>
+            <br>
+
+            <label for="course">Course:</label><br>
+            <input
+                type="text"
+                id="course"
+                name="course"
+                list="courses"
+                required>
+
+            <datalist id="courses">
+                <option value="Web Technologies">
+                <option value="Database Systems">
+                <option value="Software Engineering">
+            </datalist>
+            <br>
+
+            <label for="rating">Rating (1 to 5):</label><br>
+            <input
+                type="number"
+                id="rating"
+                name="rating"
+                min="1"
+                max="5"
+                required>
+            <br>
+
+            Class Type:<br>
+
+            <input
+                type="radio"
+                id="theory"
+                name="classtype"
+                value="Theory"
+                required>
+            <label for="theory">Theory</label>
+
+            <input
+                type="radio"
+                id="lab"
+                name="classtype"
+                value="Lab">
+            <label for="lab">Lab</label>
+            <br><br>
+
+            <label for="day">Day:</label><br>
+            <select id="day" name="day" required>
+                <option value="">Select a day</option>
+                <option value="Sunday">Sunday</option>
+                <option value="Tuesday">Tuesday</option>
+                <option value="Thursday">Thursday</option>
+            </select>
+            <br>
+
+            <label for="comments">Comments:</label><br>
+            <textarea
+                id="comments"
+                name="comments"
+                rows="4"
+                cols="35"
+                minlength="10"
+                required></textarea>
+            <br>
+
+            <button type="submit">Send Feedback</button>
+        </fieldset>
+    </form>
+
+
+</table>
+
+</body>
+</html>
